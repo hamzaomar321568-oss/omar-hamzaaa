@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login رمضان</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="lamp"></div>
+<div class="f3">
+<div class="login-form">
+  <img src="photo_2026-02-04_18-09-13.jpg" class="profile-pic">
+  
+  <h3>يهنأكم المبرمج عمر
+     بقدوم شهر رمضان المبارك
+<h3>
+   
+
+</h3>
+<div class="d1">
+  <input type="text" id="username" placeholder="كتب هنا omar ">
+  <input type="password" id="password" placeholder="اكتب هنا omar80">
+
+  <button id="loginBtn">ابدأ رحلتك الرمضانية 🌙</button>
+
+  <p id="message"></p>
+</div>
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const loginBtn = document.getElementById("loginBtn");
+  const username = document.getElementById("username");
+  const password = document.getElementById("password");
+  const message = document.getElementById("message");
+  const body = document.body;
+
+  loginBtn.addEventListener("click", function () {
+
+    const userValue = username.value.trim();
+    const passValue = password.value.trim();
+
+    
+    if (userValue === "" || passValue === "") {
+      message.innerText = "⚠️ عبي كل الحقول";
+      message.style.color = "red";
+      body.setAttribute("data-on", "false");
+      return;
+    }
+
+    // إذا صحيح
+    if (userValue === "omar" && passValue === "omar80") {
+      message.innerText = "🌙 رمضان كريم! تم تسجيل الدخول بنجاح 🚀";
+      message.style.color = "lime";
+      body.setAttribute("data-on", "true");
+
+      
+      setTimeout(() => {
+        window.location.href = "ramadan.html";
+      }, 2000);
+    } 
+    
+    else {
+      message.innerText = "❌ الاسم أو كلمة السر غير صحيحة";
+      message.style.color = "red";
+      body.setAttribute("data-on", "false");
+    }
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
